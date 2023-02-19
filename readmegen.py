@@ -13,7 +13,7 @@ sections = []
 # Define the brief description of the Unity scripts in the repository and append it to the list
 title = input(f"Please add Repository Title: \n")
 user_desc =  input(f"Please provide a brief description of your repository: \n")
-description = "## " + title + "\n\n" + gpt3_completion((open_file("openai_prompts/description.txt")).replace("<<PROMPT>>",user_desc))
+description = '<h1 align="center">' + title + "<h1>"+ "\n\n" + gpt3_completion((open_file("openai_prompts/description.txt")).replace("<<PROMPT>>",user_desc))
 sections.append(description)
 
 def get_file_extensions(directory):
@@ -72,33 +72,33 @@ sections.append(Resources)
 #sections.append(references)
 
 # Define an author section for the Unity project and append it to the list
-author = '''\n\n##Author\n\n
+author = '''\n\n## Author\n
 '''
 
 # Define information types
-#info_types = ["Name", "Job Title", "Location", "Email", "Phone", "Webpage"]
+info_types = ["Name", "Job Title", "Location", "Email", "Phone", "Webpage"]
 
 # Generate questions dynamically
-#for info_type in info_types:
-#    while True:
-#        response = input(f"Do you want to add your {info_type}? (y/n) ")
-#        if response.lower() == "y":
-#            info = input(f"{info_type}: ")
-#            author += f"{info_type}: {info}\n"
-#            break
-#        elif response.lower() == "n":
-#            break
-#        else:
-#            print("Please enter y or n.")
+for info_type in info_types:
+    while True:
+        response = input(f"Do you want to add your {info_type}? (y/n) ")
+        if response.lower() == "y":
+            info = input(f"{info_type}: ")
+            author += f"{info_type}: {info}\n"
+            break
+        elif response.lower() == "n":
+            break
+        else:
+            print("Please enter y or n.")
 
-author = '''## Author
-Manuel Alejandro Grau Bastidas
-Desarrollador de Software - Comunidad de Madrid - España
-E-mail: manuelgb94@gmail.com
-Teléfono: +34 676 18 02 00
-https://www.linkedin.com/in/manuel-grau-bastidas/
-'''
-if author != '''\n\n##Author\n\n
+#author = '''## Author
+#Manuel Alejandro Grau Bastidas
+#Desarrollador de Software - Comunidad de Madrid - España
+#E-mail: manuelgb94@gmail.com
+#Teléfono: +34 676 18 02 00
+#https://www.linkedin.com/in/manuel-grau-bastidas/
+#'''
+if author != '''\n\n## Author\n
 ''':
     sections.append(author)
 
