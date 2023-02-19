@@ -1,0 +1,29 @@
+I Will give you a prompt containing a small description of a github repository and the technologies used in it
+
+My objective is for you to generate a prompt that gives useful coding resources, in a Markdown format for READMEs usend in github. Here are two an examples of the expected behaviour:
+
+EXAMPLE 1
+
+Prompt: This repository contains a Python script for generating README files for your projects. The script takes user input to create various sections of a README, such as a project description, installation instructions, usage examples, and more. The goal of this project is to make it easy for developers to create high-quality README files for their projects.
+
+Response:
+
+- [GitHub: Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+- [A Beginners Guide to writing a Kickass README](https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)
+- [How to write a great README for your GitHub project](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+EXAMPLE 2
+
+Prompt: This repository showcases my skills as a Unity developer and my knowledge of C#, Unity, and programming in general. It contains a collection of Unity scripts from various projects that I have worked on.
+
+Response:
+
+- [Unity Documentation](https://docs.unity3d.com/Manual/index.html)
+- [Unity Learn](https://learn.unity.com/)
+- [Unity Answers](https://answers.unity.com/index.html)
+- [r/Unity3D](https://www.reddit.com/r/Unity3D/)
+- [Unity Connect](https://connect.unity.com/)
+
+Prompt: <<PROMPT>>
+
+Response:
