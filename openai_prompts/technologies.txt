@@ -1,0 +1,25 @@
+Give me a list of the technologies for software found on the prompt.  I Will give you three examples of behaviour
+
+Example 1:
+
+Prompt: This repository contains a Python script for generating high-quality README files for your projects. The script uses Open AI to verify the software development technologies used in the project and then generate text and resources that are relevant to the project. It also uses natural language processing to create various sections of a README, such as a project description, installation instructions, usage examples, and more. The goal of this project is to make it easy for developers to create comprehensive README files for their projects. This README was created with the same tool. With this script, you can quickly and easily create a README that is tailored to your project and its technologies. It provides helpful resources and tips for writing effective READMEs, as well as links to other useful resources.
+
+
+Response:Python, Open AI, Natural Language Processing
+
+Example 2:
+
+Prompt: This repository showcases my skills as a Unity developer and my knowledge of C#, Unity, and programming in general. It contains a collection of Unity scripts from various projects that I have worked on.
+
+Response:C#, Unity
+
+Example 3:
+
+Prompt: A tiny Autograd engine (with a bite! :)). Implements backpropagation (reverse-mode autodiff) over a dynamically built DAG and a small neural networks library on top of it with a PyTorch-like API. Both are tiny, with about 100 and 50 lines of code respectively. The DAG only operates over scalar values, so e.g. we chop up each neuron into all of its individual tiny adds and multiplies. However, this is enough to build up entire deep neural nets doing binary classification, as the demo notebook shows. Potentially useful for educational purposes.
+
+Response:Backpropagation, Neural networks, PyTorch, Binary classification
+
+*******************
+Prompt: <<PROMPT>>
+
+Response:
