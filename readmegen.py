@@ -13,7 +13,7 @@ sections = []
 # Define the brief description of the Unity scripts in the repository and append it to the list
 title = input(f"Please add Repository Title: \n")
 user_desc =  input(f"Please provide a brief description of your repository: \n")
-description = '<h1 align="center">' + title + "<h1>"+ "\n\n" + gpt3_completion((open_file("openai_prompts/description.txt")).replace("<<PROMPT>>",user_desc) , 0.5)
+description = f'<h1 align="center"> {title} <h1> \n\n {gpt3_completion((open_file("openai_prompts/description.txt")).replace("<<PROMPT>>",user_desc) , 0.5)}'
 sections.append(description)
 
 def get_file_extensions(directory):
@@ -26,7 +26,7 @@ def get_file_extensions(directory):
 
 # Define the technologies used in the Unity project
 technologies = ['\n\n## Technologies Used\n']
-tech_set = set(gpt3_completion((open_file("openai_prompts/technologies.txt")).replace("<<PROMPT>>", description), 0).split((", ")[:-1]))
+tech_set = {x.strip() for x in gpt3_completion((open_file("openai_prompts/technologies.txt")).replace("<<PROMPT>>", description), 0).split((", ")[:-1])}
 extensions = get_file_extensions(project_directory)
 extensions_dict = { '.js': 'JavaScript', '.py': 'Python', '.java': 'Java', '.cpp': 'C++', '.c': 'C', '.h': 'C Header', '.cs': 'C#', '.rb': 'Ruby', '.php': 'PHP', '.html': 'HTML', '.css': 'CSS', '.json': 'JSON', '.xml': 'XML', '.sql': 'SQL', '.kt': 'Kotlin', '.swift': 'Swift', '.go': 'Go', '.m': 'Objective-C', '.sh': 'Bash', '.ps1': 'PowerShell', '.ts': 'TypeScript', '.scss': 'Sass', '.less': 'Less', '.md': 'Markdown', '.yaml': 'YAML', '.csv': 'CSV', '.log': 'Log', '.odt': 'ODT', '.pdf': 'PDF', '.doc': 'DOC', '.docx': 'DOCX', '.xls': 'XLS', '.xlsx': 'XLSX', '.ppt': 'PPT', '.pptx': 'PPTX', '.bmp': 'BMP', '.gif': 'GIF', '.jpg': 'JPG', '.jpeg': 'JPEG', '.png': 'PNG', '.svg': 'SVG', '.yml': 'YAML', '.mdx': 'MDX', '.jsx': 'JSX', '.tsx': 'TSX', '.vue': 'Vue.js', '.jsx': 'React', '.tsx': 'React', '.vue': 'Vue.js', '.svelte': 'Svelte', '.dart': 'Dart', '.rs': 'Rust', '.asm': 'Assembly', '.pl': 'Perl', '.hs': 'Haskell', '.swift': 'Swift', '.groovy': 'Groovy', '.lua': 'Lua', '.scala': 'Scala', '.coffee': 'CoffeeScript', '.elm': 'Elm', '.jl': 'Julia', '.tf': 'Terraform', '.tfvars': 'Terraform', '.terraform': 'Terraform', '.tfstate': 'Terraform', '.tfstate.backup': 'Terraform', '.pug': 'Pug', '.ejs': 'EJS', '.twig': 'Twig', '.hbs': 'Handlebars', '.haml': 'Haml', '.slim': 'Slim', '.cfm': 'ColdFusion', '.lua': 'Lua', '.gradle': 'Gradle', '.r': 'R', '.d': 'D', '.tex': 'LaTeX', '.bib': 'BibTeX', '.makefile': 'Makefile', '.cmake': 'CMake', '.am': 'Automake', '.ac': 'Autoconf', '.patch': 'Patch', '.diff': 'Diff', '.sql': 'PL/SQL', '.scpt': 'AppleScript', '.applescript': 'AppleScript'}
 for ext in extensions:
@@ -53,7 +53,7 @@ sections.append(how_to_use)
 
 # Define the index of useful coding resources and append it to the list
 
-Resources = "\n## Index of Useful Resources\n\n" + gpt3_completion((open_file("openai_prompts/resources.txt")).replace("<<PROMPT>>", description), 0)
+Resources = f'\n## Index of Useful Resources\n\n {gpt3_completion((open_file("openai_prompts/resources.txt")).replace("<<PROMPT>>", description), 0)}'
 
 sections.append(Resources)
 
@@ -74,8 +74,7 @@ sections.append(Resources)
 #sections.append(references)
 
 # Define an author section for the Unity project and append it to the list
-author = '''\n\n## Author\n
-'''
+author = '\n\n## Author\n\n'
 
 # Define information types
 info_types = ["Name", "Job Title", "Location", "Email", "Phone", "Webpage"]
@@ -100,8 +99,7 @@ for info_type in info_types:
 #Teléfono: +34 676 18 02 00
 #https://www.linkedin.com/in/manuel-grau-bastidas/
 #'''
-if author != '''\n\n## Author\n
-''':
+if author != '\n\n## Author\n\n':
     sections.append(author)
 
 # Define the filename for the README
